@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="wYM-7q-eOb">
+            <objects>
+                <viewController id="Fe4-ey-wYT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cNb-9p-OCe"/>
+                        <viewControllerLayoutGuide type="bottom" id="qiE-0b-AzH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mYF-9k-8m3">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rJf-LE-KFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-681.40929535232385" y="136.80000000000001"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="Stereoscopic_ARKit_Template" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BwZ-vm-8pe"/>
+                        <viewControllerLayoutGuide type="bottom" id="nbi-IF-kVN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gdM-EX-KBy">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skA-8i-zcn">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <subviews>
+                                    <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xL0-MJ-QRe">
+                                        <rect key="frame" x="0.0" y="0.0" width="333.5" height="375"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Dex-Jz-ygN" appends="YES" id="NNq-2s-GzW"/>
+                                            <outletCollection property="gestureRecognizers" destination="Y7t-6v-ibY" appends="YES" id="WGh-T2-BMq"/>
+                                            <outletCollection property="gestureRecognizers" destination="ORW-yR-Y8v" appends="YES" id="eWZ-yg-5xl"/>
+                                        </connections>
+                                    </arscnView>
+                                    <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBL-UT-LR3">
+                                        <rect key="frame" x="333.5" y="0.0" width="333.5" height="375"/>
+                                    </arscnView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HBL-UT-LR3" firstAttribute="height" secondItem="xL0-MJ-QRe" secondAttribute="height" id="G6e-W7-xfK"/>
+                                    <constraint firstItem="HBL-UT-LR3" firstAttribute="width" secondItem="xL0-MJ-QRe" secondAttribute="width" id="UTn-Y4-oXi"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="skA-8i-zcn" firstAttribute="leading" secondItem="gdM-EX-KBy" secondAttribute="leading" id="HMp-fo-OME"/>
+                            <constraint firstItem="skA-8i-zcn" firstAttribute="top" secondItem="BwZ-vm-8pe" secondAttribute="bottom" id="iTg-py-8Hs"/>
+                            <constraint firstItem="nbi-IF-kVN" firstAttribute="top" secondItem="skA-8i-zcn" secondAttribute="bottom" id="qzd-J9-Ape"/>
+                            <constraint firstAttribute="trailing" secondItem="skA-8i-zcn" secondAttribute="trailing" id="rtU-Fx-q4G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="xL0-MJ-QRe" id="pVu-WW-jOH"/>
+                        <outlet property="sceneView2" destination="HBL-UT-LR3" id="Ls1-EE-kFY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Dex-Jz-ygN">
+                    <connections>
+                        <action selector="tapgesture:" destination="BV1-FR-VrT" id="Imj-9V-Kr5"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="Y7t-6v-ibY">
+                    <connections>
+                        <action selector="pinchgesture:" destination="BV1-FR-VrT" id="EP0-a6-Z56"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="oY5-dH-nHl">
+                    <connections>
+                        <action selector="pangesture:" destination="BV1-FR-VrT" id="52Q-zN-q9M"/>
+                    </connections>
+                </panGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="ORW-yR-Y8v">
+                    <connections>
+                        <action selector="panscreeges:" destination="BV1-FR-VrT" id="E24-mo-ihE"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="139.880059970015" y="138.40000000000001"/>
+        </scene>
+    </scenes>
+</document>
